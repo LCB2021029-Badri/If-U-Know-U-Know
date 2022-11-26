@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     var sensor : Sensor? = null
     var sensorManager : SensorManager? = null
     lateinit var display_video : VideoView
+    var mediaController: MediaController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,13 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         display_video.visibility = View.INVISIBLE
 
         // video instead of image
-        val mediaController = MediaController(this)
-        mediaController.setAnchorView(display_video)
+        mediaController = MediaController(this)
+        mediaController!!.setAnchorView(display_video)
         val offlineUri = Uri.parse("android.resource://$packageName/${R.raw.mvd1}")
         display_video.setMediaController(mediaController)
         display_video.setVideoURI(offlineUri)
         display_video.requestFocus()
-        display_video.start()
+//        display_video.start()
 
         //sensor implementation
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
@@ -49,20 +50,20 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         //
         var isRunning = false
+//        display_video.setMediaController(mediaController)
 
         try{
             if(event!!.values[0] < 30 && isRunning == false){ // image is visible when surrounding light is dim i.e. <30
                 isRunning = true
                 display_video.visibility = View.VISIBLE
-                display_video.resume()
+                display_video.start()
 //                display_video.resume()
             }
             else{   // image is invisible when surroundings is bright
                 isRunning = false
                 display_video.visibility = View.INVISIBLE
-                display_video.pause()
 //                display_image.visibility = View.GONE
-//                display_video.pause()
+                display_video.pause()
             }
         }
         catch(e : IOException){
@@ -85,3 +86,5 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager!!.unregisterListener(this)
     }
 }
+
+///mf from here----------
