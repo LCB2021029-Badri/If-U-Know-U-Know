@@ -31,18 +31,20 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     }
 
-    //
-    var isRunning = false
-
     override fun onSensorChanged(event: SensorEvent?) {
+
+        //
+        var isRunning = false
+
         try{
-            if(event!!.values[0] < 100 && isRunning == false){ // image is visible when surrounding light is dim i.e. <30
+            if(event!!.values[0] < 30 && isRunning == false){ // image is visible when surrounding light is dim i.e. <30
                 isRunning = true
                 display_image.visibility = View.VISIBLE
             }
             else{   // image is invisible when surroundings is bright
                 isRunning = false
                 display_image.visibility = View.INVISIBLE
+//                display_image.visibility = View.GONE
             }
         }
         catch(e : IOException){
