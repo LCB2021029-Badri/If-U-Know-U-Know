@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.VideoView
+import com.example.ifuknowuknow.databinding.ActivityMainBinding
 import java.io.IOException
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -21,10 +22,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     var sensorManager : SensorManager? = null
     lateinit var display_video : VideoView
     var mediaController: MediaController? = null
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         //image instead of video
@@ -38,11 +41,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         display_video.setMediaController(mediaController)
         display_video.setVideoURI(offlineUri)
         display_video.requestFocus()
-//        display_video.start()
 
         //sensor implementation
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
+
+        //something
 
     }
 
@@ -53,17 +57,21 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 //        display_video.setMediaController(mediaController)
 
         try{
+
+            //
+
             if(event!!.values[0] < 30 && isRunning == false){ // image is visible when surrounding light is dim i.e. <30
                 isRunning = true
                 display_video.visibility = View.VISIBLE
                 display_video.start()
-//                display_video.resume()
+                binding.studying.visibility = View.GONE
             }
             else{   // image is invisible when surroundings is bright
                 isRunning = false
-                display_video.visibility = View.INVISIBLE
-//                display_image.visibility = View.GONE
+                display_video.visibility = View.GONE
                 display_video.pause()
+
+                binding.studying.visibility = View.VISIBLE
             }
         }
         catch(e : IOException){
@@ -86,5 +94,3 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager!!.unregisterListener(this)
     }
 }
-
-///mf from here----------
