@@ -7,15 +7,15 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/display_img"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:src="@drawable/img1"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/display_img"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:src="@drawable/img1"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <VideoView
         android:id="@+id/video1"
@@ -33,41 +33,42 @@
         android:id="@+id/studying"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone">
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="I'm Studying Mom, Please Don't Disturb"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="I'm Studying Mom, Please Don't Disturb"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10sp"
-        android:layout_marginTop="20sp"
-        android:text="Take your first steps programming in Kotlin, add images and text to your Android apps, and learn how to use classes, objects, and conditionals to create an interactive app for your users.\n\nBuild two different apps, and improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.\n\nEnhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.\n\n"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/heading"
-        app:layout_constraintStart_toStartOf="@+id/heading"
-        app:layout_constraintTop_toBottomOf="@+id/heading" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="20sp"
+            android:text="Take your first steps programming in Kotlin, add images and text to your Android apps, and learn how to use classes, objects, and conditionals to create an interactive app for your users.\n\nBuild two different apps, and improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.\n\nEnhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.\n\n"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/heading"
+            app:layout_constraintStart_toStartOf="@+id/heading"
+            app:layout_constraintTop_toBottomOf="@+id/heading" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <Switch
+        android:id="@+id/toggle_button"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:text="on"
+        android:checked="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
