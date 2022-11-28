@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         list.add("Use Kotlin coroutines to perform multiple tasks at once, and learn about HTTP and REST to get data from the internet using Retrofit. Then use the Coil library to display images in your app.")
         list.add("Build apps that display a list of data and learn how to make your apps more beautiful with Material Design.")
         list.add("Continue learning the fundamentals of Kotlin, and start building more interactive apps.Learn the best practices of app architecture to build more complex apps.")
-        list.add("Learn the basics of building Android apps with Jetpack Compose, the new UI toolkit for building Android apps. Along the way, you'll develop a collection of apps to start your journey as an Android developer.")
+        list.add("Learn the basics of building Android apps with Jetpack Compose, the new UI toolkit for building Android apps.Along the way, you'll develop a collection of apps to start your journey as an Android developer.\n\n")
 
         return list
     }

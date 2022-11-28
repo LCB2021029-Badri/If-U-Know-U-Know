@@ -35,6 +35,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:text="Disclaimer:"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -44,7 +45,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="**this is for educational purposes only"
+            android:text="**This is for educational purposes only, don't report"
             android:textColor="@color/green"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -59,10 +60,9 @@
         app:layout_constraintEnd_toEndOf="@+id/toggle_button"
         app:layout_constraintTop_toBottomOf="@+id/toggle_button">
         <androidx.recyclerview.widget.RecyclerView
-            android:padding="10dp"
             android:id="@+id/recyclerView"
-            android:layout_width="409dp"
-            android:layout_height="729dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

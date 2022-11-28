@@ -20,12 +20,12 @@ class ItemAdapter(val itemlist: ArrayList<String>):RecyclerView.Adapter<ItemAdap
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = itemlist[position]
         holder.itemView.apply {
-            binding?.tvItem?.text = "badri's item $item"
-            if(position%2==0){
-                binding?.tvItem?.setBackgroundColor(ContextCompat.getColor(context,R.color.green))
-            }else{
-                binding?.tvItem?.setBackgroundColor(ContextCompat.getColor(context,R.color.green))
-            }
+            binding?.tvItem?.text = "$item"
+//            if(position%2==0){
+//                binding?.tvItem?.setBackgroundColor(ContextCompat.getColor(context,R.color.green))
+//            }else{
+//                binding?.tvItem?.setBackgroundColor(ContextCompat.getColor(context,R.color.green))
+//            }
         }
     }
 
