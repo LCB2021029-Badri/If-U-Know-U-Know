@@ -51,12 +51,14 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         display_video.setMediaController(mediaController)
         display_video.setVideoURI(offlineUri)
         display_video.requestFocus()
+        display_video.start()
 
         //sensor implementation
         binding.toggleButton.setOnCheckedChangeListener { compoundButton, b ->
             if(b){  //if checked
                 flag = 0
                 binding.notStudying.visibility = View.VISIBLE
+                binding.instructions.visibility = View.VISIBLE
                 display_video.visibility = View.VISIBLE
                 display_video.start()
                 binding.studying.visibility = View.GONE
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             else{   //if not checked
                 flag = 1
                 binding.notStudying.visibility = View.GONE
+                binding.instructions.visibility = View.GONE
                 display_video.visibility = View.GONE
                 binding.studying.visibility = View.VISIBLE
                 binding.studyMaterial2.visibility = View.GONE
@@ -86,9 +89,10 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         //---------------------------
 //        isRunning = false
             try {
-                if (event!!.values[0] < 30 && isRunning == false && flag == 0) { // image is visible when surrounding light is dim i.e. <30
+                if (event!!.values[0] < 15 && isRunning == false && flag == 0) { // image is visible when surrounding light is dim i.e. <30
                     isRunning = true
                     binding.notStudying.visibility = View.VISIBLE
+                    binding.instructions.visibility = View.VISIBLE
                     display_video.visibility = View.VISIBLE
                     display_video.start()
                     binding.studying.visibility = View.GONE
@@ -97,6 +101,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 } else {   // image is invisible when surroundings is bright
                     isRunning = false
                     binding.notStudying.visibility = View.GONE
+                    binding.instructions.visibility = View.GONE
                     display_video.visibility = View.GONE
                     binding.studying.visibility = View.VISIBLE
                     binding.studyMaterial2.visibility = View.GONE
