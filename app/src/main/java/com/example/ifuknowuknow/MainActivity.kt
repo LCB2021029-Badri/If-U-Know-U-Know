@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             else{   // image is invisible when surroundings is bright
                 isRunning = false
                 display_video.visibility = View.GONE
-                display_video.pause()
+//                display_video.pause()
 
                 binding.studying.visibility = View.VISIBLE
             }
