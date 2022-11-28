@@ -52,13 +52,19 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 display_video.visibility = View.VISIBLE
                 display_video.start()
                 binding.studying.visibility = View.GONE
+                binding.studyMaterial2.visibility = View.VISIBLE
+                binding.studyMaterial1.visibility = View.GONE
             }
             else{   //if not checked
                 flag = 1
                 display_video.visibility = View.GONE
                 binding.studying.visibility = View.VISIBLE
+                binding.studyMaterial2.visibility = View.GONE
+                binding.studyMaterial1.visibility = View.VISIBLE
             }
         }
+
+        //sensor manager
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
 
@@ -73,10 +79,14 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                     display_video.visibility = View.VISIBLE
                     display_video.start()
                     binding.studying.visibility = View.GONE
+                    binding.studyMaterial2.visibility = View.VISIBLE
+                    binding.studyMaterial1.visibility = View.GONE
                 } else {   // image is invisible when surroundings is bright
                     isRunning = false
                     display_video.visibility = View.GONE
                     binding.studying.visibility = View.VISIBLE
+                    binding.studyMaterial2.visibility = View.GONE
+                    binding.studyMaterial1.visibility = View.VISIBLE
                 }
             }
             catch (e: IOException){

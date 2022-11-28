@@ -21,56 +21,99 @@
         android:id="@+id/video1"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintEnd_toEndOf="@+id/toggle_button"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintTop_toBottomOf="@+id/toggle_button"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/studying"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/toggle_button"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_button">
 
         <TextView
             android:id="@+id/heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="I'm Studying Mom, Please Don't Disturb"
+            android:text="ANDROID STUDIO"
+            android:textStyle="bold|italic"
             android:textAlignment="center"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10sp"
-            android:layout_marginTop="20sp"
-            android:text="Take your first steps programming in Kotlin, add images and text to your Android apps, and learn how to use classes, objects, and conditionals to create an interactive app for your users.\n\nBuild two different apps, and improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.\n\nEnhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.\n\n"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/heading"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/heading"
-            app:layout_constraintTop_toBottomOf="@+id/heading" />
+            app:layout_constraintTop_toBottomOf="@+id/heading">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:layout_marginTop="20sp"
+                android:text="Take your first steps programming in Kotlin, add images and text to your Android apps, and learn how to use classes, objects, and conditionals to create an interactive app for your users.\n\nBuild two different apps, and improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.\n\nEnhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.\n\n"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/heading"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/heading"
+                app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/study_material_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Study Material 1:"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toggle_button"
+        app:layout_constraintEnd_toStartOf="@+id/toggle_button"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/study_material_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Study Material 2:"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toggle_button"
+        app:layout_constraintEnd_toStartOf="@+id/toggle_button"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416"
+        android:visibility="gone"/>
+
     <Switch
         android:id="@+id/toggle_button"
-        android:layout_width="55dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:checked="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="Beast Mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
