@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         //image instead of video
         display_video = findViewById(R.id.video1)
-        display_video.visibility = View.INVISIBLE
+//        display_video.visibility = View.INVISIBLE
 
         // video instead of image
         mediaController = MediaController(this)
@@ -87,9 +87,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onSensorChanged(event: SensorEvent?) {
         //---------------------------
-//        isRunning = false
             try {
-                if (event!!.values[0] < 15 && isRunning == false && flag == 0) { // image is visible when surrounding light is dim i.e. <30
+                if (event!!.values[0] < 15 && isRunning == false && flag == 0) { // image is visible when surrounding light is dim i.e. <15
                     isRunning = true
                     binding.notStudying.visibility = View.VISIBLE
                     binding.instructions.visibility = View.VISIBLE
@@ -143,7 +142,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         return list
     }
-
     private fun listView(){
         currentView = LIST_VIEW
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
